@@ -12,8 +12,10 @@ class searcher
 {
 private:
     QFileInfoList list;
+
 public:
     searcher();
+    QFileInfo currentfile;
     void Rsearch(QString dirname);
     void CreateIndex(QString filename);
     QFileInfoList SearchText(QString str);

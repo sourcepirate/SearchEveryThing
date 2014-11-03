@@ -17,7 +17,7 @@ void searcher::Rsearch(QString root)
         {
            qDebug()<<info.absoluteFilePath();
            // totallist.append(info);
-
+           this->list.append(info);
             if(info.isDir() && !info.isHidden())
             {
                 this->Rsearch(info.absoluteFilePath());
@@ -58,7 +58,9 @@ QFileInfoList searcher::SearchText(QString str)
     while(!stream.atEnd())
     {
         QString line=stream.readLine();
+        qDebug()<<line<<endl;
         QStringList pices=line.split(QRegExp("/"));
+        qDebug()<<pices[pices.length()-1]<<endl;
         if(pices[pices.length()-1].contains(str))
         {
             qDebug()<<pices[pices.length()-1]<<"present in "<<line;

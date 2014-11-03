@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QListView>
+#include <QListWidget>
 namespace Ui {
 class EveryThing;
 }
@@ -17,8 +18,6 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
-    void on_listWidget_doubleClicked(const QModelIndex &index);
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
