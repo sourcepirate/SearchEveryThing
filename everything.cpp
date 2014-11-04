@@ -20,9 +20,11 @@ void EveryThing::on_pushButton_clicked()
 {
    ui->listWidget->clear();
    searcher *search=new searcher();
-   search->Rsearch("/home/sathyagriffin/Documents");
+   //search->Rsearch("/home/sathyagriffin/Documents");
  //  qDebug()<<"creating index file";
-   search->CreateIndex("index.idx");
+  // search->CreateIndex("index.idx");
+   ui->statusBar->clearMessage();
+   ui->statusBar->showMessage("Loading..please wait");
    QFileInfoList lists=search->SearchText(ui->lineEdit->text());
    foreach(QFileInfo file,lists)
    {
@@ -35,4 +37,21 @@ void EveryThing::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
     QString file=ui->listWidget->currentItem()->text();
     QDesktopServices::openUrl(QUrl(file));
+    ui->statusBar->clearMessage();
+    ui->statusBar->showMessage("Opening...");
+}
+
+void EveryThing::on_actionCreate_Index_triggered()
+{
+    ui->statusBar->clearMessage();
+    ui->statusBar->showMessage("Loading..please wait");
+    searcher *search=new searcher();
+    search->Rsearch("/home/sathyagriffin");
+    search->CreateIndex("index.idx");
+
+}
+
+void EveryThing::on_actionQuit_triggered()
+{
+    this->close();
 }

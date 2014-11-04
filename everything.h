@@ -21,6 +21,10 @@ private slots:
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
+    void on_actionCreate_Index_triggered();
+
+    void on_actionQuit_triggered();
+
 private:
     Ui::EveryThing *ui;
 

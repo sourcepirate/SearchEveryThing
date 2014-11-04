@@ -60,8 +60,45 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionCreate_Index"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuDirectory">
+    <property name="title">
+     <string>Directory</string>
+    </property>
+    <addaction name="actionSet_Directory"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuDirectory"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionCreate_Index">
+   <property name="text">
+    <string>Create Index</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSet_Directory">
+   <property name="text">
+    <string>Set Directory</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
